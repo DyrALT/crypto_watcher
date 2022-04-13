@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> {
             ),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
+              physics: const BouncingScrollPhysics(),
               child: Row(
                 children: const [
                   StatisticCard(
@@ -47,7 +48,23 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-            )
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(MediaQuery.of(context).size.width * 0.05, 0, MediaQuery.of(context).size.width * 0.05, 0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Asset',
+                    style: GoogleFonts.staatliches(fontSize: 30),
+                  ),
+                  IconButton(iconSize: 25, icon: const Icon(Icons.add), onPressed: () {}),
+                ],
+              ),
+            ),
           ],
         ));
   }

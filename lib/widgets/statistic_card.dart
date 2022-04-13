@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 class StatisticCard extends StatelessWidget {
   final MaterialColor color;
   final String text;
-  const StatisticCard({Key? key, required this.color,required this.text}) : super(key: key);
+  const StatisticCard({Key? key, required this.color, required this.text}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +18,8 @@ class StatisticCard extends StatelessWidget {
             flex: 10,
             child: Container(
                 decoration: BoxDecoration(
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
-              gradient: LinearGradient(colors: [color.shade900, color.shade800, color.shade500, Colors.white], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+              borderRadius: const BorderRadius.vertical(top: Radius.circular(25)),
+              gradient: LinearGradient(colors: [color.shade900, color.shade300], begin: Alignment.topLeft, end: Alignment.bottomRight),
             )),
           ),
           Expanded(
@@ -27,7 +27,7 @@ class StatisticCard extends StatelessWidget {
             child: Container(
               decoration: const BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
+                borderRadius: BorderRadius.vertical(bottom: Radius.circular(25)),
               ),
               child: Row(
                 children: [
@@ -35,7 +35,7 @@ class StatisticCard extends StatelessWidget {
                     padding: const EdgeInsets.all(20),
                     child: Text(
                       '\$$text',
-                      style: GoogleFonts.gothicA1(fontSize: 20),
+                      style: GoogleFonts.gothicA1(fontSize: 20, color: Colors.black),
                     ),
                   )
                 ],
@@ -46,7 +46,7 @@ class StatisticCard extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         color: const Color.fromARGB(255, 114, 112, 112),
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(25),
         boxShadow: const [
           BoxShadow(color: Color.fromARGB(177, 171, 171, 171), blurRadius: 10, offset: Offset(0, 5)),
         ],
