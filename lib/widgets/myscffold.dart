@@ -29,7 +29,7 @@ class MyScaffold extends StatelessWidget {
               )
             : const SizedBox(),
         centerTitle: true,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.black,
         elevation: 0.0,
       ),
       body: Container(
@@ -40,13 +40,16 @@ class MyScaffold extends StatelessWidget {
           Color.fromARGB(255, 0, 0, 0),
           Color.fromARGB(255, 35, 35, 35),
         ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
-        child: Column(
-          children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.15,
-            ),
-            child
-          ],
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: Column(
+            children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.15,
+              ),
+              child
+            ],
+          ),
         ),
       ),
     );
